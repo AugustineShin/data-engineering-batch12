@@ -12,7 +12,7 @@ import psycopg2
 
 def get_Redshift_connection():
     host = "learnde.cduaw970ssvt.ap-northeast-2.redshift.amazonaws.com"
-    redshift_user = "keeyong"  # 본인 ID 사용
+    redshift_user = "chully38"  # 본인 ID 사용
     redshift_pass = "..."  # 본인 Password 사용
     port = 5439
     dbname = "dev"
@@ -39,11 +39,11 @@ def transform(text):
 def load(lines):
     logging.info("load started")
     cur = get_Redshift_connection()
-    sql = "BEGIN;DELETE FROM keeyong.name_gender;"
+    sql = "BEGIN;DELETE FROM chully38.name_gender;"
     for l in lines:
         if l != '':
             (name, gender) = l.split(",")
-            sql += f"INSERT INTO keeyong.name_gender VALUES ('{name}', '{gender}');"
+            sql += f"INSERT INTO chully38.name_gender VALUES ('{name}', '{gender}');"
     sql += "END;"
     logging.info(sql)
     """
