@@ -25,6 +25,8 @@ sudo apt-get install -y libmysqlclient-dev
 sudo pip3 install --ignore-installed "apache-airflow[celery,amazon,mysql,postgres]==2.5.1" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.5.1/constraints-3.7.txt"
 sudo pip3 install oauth2client
 sudo pip3 install gspread
+sudo pip3 install numpy
+sudo pip3 install pandas
 # sudo pip3 install cryptography psycopg2-binary
 ```
 
